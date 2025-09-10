@@ -43,7 +43,11 @@ services:
       --log_bin_trust_function_creators=1
     ports:
       - "3306:3306"
-    env_file: env/db.env
+    environment:
+      MARIADB_ROOT_PASSWORD: rootpwd-change-me
+      MARIADB_DATABASE: magento
+      MARIADB_USER: magento
+      MARIADB_PASSWORD: magento
     volumes:
       - dbdata:/var/lib/mysql
 
